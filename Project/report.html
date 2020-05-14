@@ -14569,7 +14569,9 @@ Billable seconds: 281
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong>
-The accuracy of the XGBoost models was much lower than the current model, both of them without any hyperparameter tunning. The current model is better for sentiment analysis because is a RNN model based on LSTM cells which is much better for this purpose. The XGBoost model is more suitable for other types of tasks as linear regression.</p>
+The accuracy of the both models pretty similar but the accuracy XGBoost model is is slightly better.</p>
+<p>My model is a RNN model based on LSTM cells, and the output not only depends on the current input but also on the previous inputs. Meanwhile XGBoost model is an implementation of gradient boosted decision trees designed for speed and performance, it doesn't have memory of the previous inputs.</p>
+<p>The RNN model can retain information about the order of the words and it should be better for sentiment analysis than XGBoost. I think the problem is that my model needs more training time and more hyperparemeter tunning. Meanwhile the XGBoost doesn't need much training time to have a reasonable accuracy.</p>
 
 </div>
 </div>
@@ -15222,7 +15224,7 @@ Don't waste your money at the cinema, maybe Google the outcome.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[171]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">predictor</span><span class="o">.</span><span class="n">delete_endpoint</span><span class="p">()</span>
